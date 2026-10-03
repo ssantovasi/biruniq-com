@@ -1,0 +1,70 @@
+/* BirunIQ — brand board palette: Midnight 900 for dark surfaces, Brass-dark as the
+   one accent on dark, Ivory for ink. System fonts only: no external requests. */
+:root{
+  --midnight:#0A1E38;
+  --midnight-2:#10294A;
+  --line:rgba(242,239,230,.14);
+  --ivory:#F7F5EF;
+  --ink-62:rgba(247,245,239,.62);
+  --brass:#E3B733;
+  --ff:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--midnight)}
+body{background:var(--midnight);color:var(--ivory);font-family:var(--ff);line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--ivory);text-decoration-color:var(--brass);text-underline-offset:3px}
+a:hover{color:var(--brass)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+header.top img{height:52px;width:auto;display:block}
+header.top nav{display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem}
+header.top nav a{text-decoration:none;color:var(--ink-62)}
+header.top nav a:hover,header.top nav a[aria-current]{color:var(--ivory)}
+main{padding:56px 0 72px}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.12;font-weight:750;letter-spacing:-.01em;margin-bottom:18px}
+h1 .iq{color:var(--brass)}
+h2{font-size:1.35rem;margin:44px 0 12px;font-weight:700}
+h3{font-size:1.05rem;margin:22px 0 6px}
+p,li{color:var(--ink-62);font-size:1.02rem}
+p+p{margin-top:12px}
+ul{padding-left:1.2rem;margin-top:8px}
+li{margin:4px 0}
+.lead{font-size:1.18rem;color:var(--ivory);max-width:44rem}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-62);margin-bottom:14px}
+.cta{display:inline-block;margin-top:26px;padding:12px 22px;border:1px solid var(--brass);color:var(--ivory);
+  text-decoration:none;font-weight:600;border-radius:4px}
+.cta:hover{background:rgba(227,183,51,.12);color:var(--ivory)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);background:var(--midnight-2);padding:18px;border-radius:6px}
+.card b{display:block;color:var(--ivory);margin-bottom:4px;letter-spacing:.06em;font-size:.85rem}
+.card p{font-size:.95rem}
+.panel{border:1px solid var(--line);background:var(--midnight-2);padding:20px 22px;border-radius:6px;margin-top:14px}
+.fill{background:rgba(227,183,51,.16);color:var(--brass);padding:0 4px;border-radius:3px;font-weight:600}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin-top:10px}
+dt{color:var(--ivory);font-weight:600}
+dd{color:var(--ink-62)}
+@media(max-width:560px){dl{grid-template-columns:1fr}dd{margin-bottom:8px}}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:.88rem;color:var(--ink-62)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+.updated{font-size:.88rem;margin-bottom:26px}
+@media(max-width:560px){header.top img{height:40px}header.top nav{gap:12px;font-size:.85rem;flex-wrap:nowrap}}
+/* contact form */
+.form{margin-top:28px;display:grid;gap:16px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.form .row{grid-template-columns:1fr}}
+.form label{display:grid;gap:6px;color:var(--ivory);font-size:.92rem;font-weight:600}
+.form input:not([type=checkbox]),.form textarea{width:100%;font:inherit;font-weight:400;color:var(--ivory);background:var(--midnight);
+  border:1px solid var(--line);border-radius:4px;padding:10px 12px}
+.form input:focus,.form textarea:focus{outline:2px solid var(--brass);outline-offset:1px;border-color:transparent}
+.form ::placeholder{color:rgba(247,245,239,.35)}
+.form .req{color:var(--brass)}
+.consent{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:4px;padding:14px}
+.consent input{width:20px;height:20px;margin-top:2px;accent-color:var(--brass)}
+.consent label{display:block;font-weight:400;font-size:.88rem;color:var(--ink-62);line-height:1.55}
+.form button.cta{margin-top:0;justify-self:start;background:none;font:inherit;font-weight:600;cursor:pointer}
+.status{min-height:1.4em;font-size:.95rem}
+.status.ok{color:#7FD99A}.status.err{color:#FF9A8A}

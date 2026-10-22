@@ -8,6 +8,9 @@ Stood up 2026-10-02 for toll-free SMS number verification; to be replaced later.
 - `contact.html` — contact form with the optional, unticked SMS opt-in checkbox (Twilio proof-of-consent URL). Static: set FORM_ENDPOINT (form service) or FALLBACK_EMAIL in its script
 - `terms.html` — website Terms & Conditions
 - `sms-terms.html` — SMS terms: program, opt-in, frequency, rates, STOP/HELP
+- `about.html`, `eula.html`, `evaluation-terms.html`, `attributions.html` — added 2026-10-22 with a new
+  `privacy.html` and `terms.html` (Terms of Service). ⚠ These six share their text word-for-word with the
+  Cartos site (`cartos-Project/website/`); change both together. Party: Bitruvius, Inc.; law: Delaware.
 
 Plain static HTML, system fonts, no external requests. Every `[TO FILL: …]` must be
 replaced with real business details before the toll-free verification is submitted.

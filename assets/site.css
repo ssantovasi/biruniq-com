@@ -36,6 +36,7 @@ li{margin:4px 0}
    so a narrow screen breaks between the three phrases, never inside one. */
 .tagline{font-size:1.15rem;font-weight:600;color:var(--brass);margin-bottom:22px}
 .tagline span{white-space:nowrap}
+.foot-tag{color:var(--brass);font-weight:600}
 .eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-62);margin-bottom:14px}
 .cta{display:inline-block;margin-top:26px;padding:12px 22px;border:1px solid var(--brass);color:var(--ivory);
   text-decoration:none;font-weight:600;border-radius:4px}

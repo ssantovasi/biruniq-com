@@ -1,0 +1,196 @@
+{
+ "source": "BirunIQ teaser take 6 (public cut), narration-placement.json, 2026-11-08",
+ "duration": 372.5,
+ "lines": [
+  {
+   "id": "a1-brand",
+   "start": 15.1,
+   "text": "BirunIQ."
+  },
+  {
+   "id": "a2-descriptor",
+   "start": 18.1,
+   "text": "Sovereign spatial intelligence."
+  },
+  {
+   "id": "b1-premise",
+   "start": 20.5,
+   "text": "This is BirunIQ. One platform for geospatial intelligence. One map, one catalog of layers, one sign-in. So an agency, or many departments, can work from the same picture."
+  },
+  {
+   "id": "b2-build",
+   "start": 34.2,
+   "text": "It's built in Rust, on Postgres and PostGIS, with a React web client, a Flutter field app, and model inference in a containerised sidecar. It deploys three ways: as SaaS, as a sovereign hybrid, or as an air-gap capable build for customers who need a lockout."
+  },
+  {
+   "id": "b3-industries",
+   "start": 53.6,
+   "text": "Seventeen industries, live today. From defence and critical infrastructure, to environment, agriculture, and land."
+  },
+  {
+   "id": "b4-counts",
+   "start": 61.8,
+   "text": "A hundred and thirty-three modules. A hundred and thirty department modules, and three platform modules. Plus thirty shared capabilities in the registry."
+  },
+  {
+   "id": "b5-onesystem",
+   "start": 72.7,
+   "text": "One deployment can serve many tenants. Each tenant is licensed for the editions it needs. Its data is kept apart by row-level security in the database. And inside a tenant, access is scoped by team. So it's one system, for many departments."
+  },
+  {
+   "id": "c1-defence",
+   "start": 91.9,
+   "text": "Start with defence and security. WatchFloor is the command picture. Protected assets on one map, each with its own record."
+  },
+  {
+   "id": "c2-lens",
+   "start": 100.5,
+   "text": "MaritimeLens flags radar detections with no matching ship signal. Dark vessels. And it says so when it can't tell."
+  },
+  {
+   "id": "c3-sentry",
+   "start": 108.5,
+   "text": "Sentry watches named sites. Each gets a risk score, and the drivers behind it, and incidents land in a console."
+  },
+  {
+   "id": "c4a-guardian",
+   "start": 115.9,
+   "text": "Guardian scores the infrastructure itself. Starting with energy."
+  },
+  {
+   "id": "c4b-guardian",
+   "start": 123.7,
+   "text": "Then bridges and tunnels. Four products, one system underneath."
+  },
+  {
+   "id": "d1-3d",
+   "start": 131.4,
+   "text": "Now critical infrastructure. In this view, every asset stands at its stored risk score. Taller means more severe."
+  },
+  {
+   "id": "d2a-grid",
+   "start": 139.6,
+   "text": "Grid command. Outages, transformer records, transmission lines."
+  },
+  {
+   "id": "d2b-gridops",
+   "start": 147.0,
+   "text": "Then network operations, where assets cluster by count, and open into icons as you zoom."
+  },
+  {
+   "id": "d3-flux",
+   "start": 157.2,
+   "text": "Flux. Storage state of charge, generation against its rating, corridors against their limits."
+  },
+  {
+   "id": "d4-petro",
+   "start": 164.5,
+   "text": "PetroCore watches a site for change, camera by camera. All of it simulated. The screen says so."
+  },
+  {
+   "id": "d5-marine",
+   "start": 175.9,
+   "text": "Dark contacts at loading points. And process-safety impairments, plant by plant."
+  },
+  {
+   "id": "d6-milepost",
+   "start": 185.1,
+   "text": "Milepost keeps bridge inspections. Tower keeps airport lighting. Different industries. The same platform."
+  },
+  {
+   "id": "e1-spill",
+   "start": 196.5,
+   "text": "Environmental. SpillTrace records an incident, the slick area seen on each pass, and the receptors in its path."
+  },
+  {
+   "id": "e2-flood",
+   "start": 204.2,
+   "text": "FloodSurge sets critical facilities against FEMA flood zones. Then modelled streamflow, and river gauges."
+  },
+  {
+   "id": "e3a-green",
+   "start": 215.0,
+   "text": "GreenScope. Findings with inspection photos, and risk by zone."
+  },
+  {
+   "id": "e3b-groundwater",
+   "start": 221.8,
+   "text": "Groundwater. Over thirteen hundred monitoring wells, clustered by count. Zoom in, and they open into well records."
+  },
+  {
+   "id": "e3c-sat",
+   "start": 233.8,
+   "text": "Even over satellite imagery."
+  },
+  {
+   "id": "e4-harvest",
+   "start": 238.6,
+   "text": "And Harvest. A crop calendar, a crop index from satellite imagery, and field boundaries the model delineated. Real model output, not demo."
+  },
+  {
+   "id": "f1-atlas",
+   "start": 252.6,
+   "text": "Government and land. Atlas is the smart-city view. Sensors with a 24 hour trend, assets, incidents, emergency units."
+  },
+  {
+   "id": "f2-maritime",
+   "start": 262.8,
+   "text": "Maritime shows vessels with their stored tracks. And a mapbook can be generated straight from the current view."
+  },
+  {
+   "id": "f3-terra",
+   "start": 272.6,
+   "text": "Terra turns drone imagery into candidate parcels, reviewed one at a time. They're proposals. Not titles."
+  },
+  {
+   "id": "f4a-africa",
+   "start": 280.6,
+   "text": "One Africa runs a port. Vessels, terminals, berth occupancy."
+  },
+  {
+   "id": "f4b-blueprint",
+   "start": 287.4,
+   "text": "And Blueprint tracks construction projects."
+  },
+  {
+   "id": "g1-platform",
+   "start": 292.4,
+   "text": "Underneath all of it is one platform. Layers come from one catalog. Analysis and compare work the same way everywhere. Here, satellite imagery against streets."
+  },
+  {
+   "id": "g1b-admin",
+   "start": 308.1,
+   "text": "And this is the Admin console. Which editions a tenant is licensed for. Which modules are switched on. Field apps, and data sources. And one control for external data. All from the same sign-in."
+  },
+  {
+   "id": "g2a-sources",
+   "start": 323.1,
+   "text": "Every external feed is listed, with its status. And a tenant can switch external data off."
+  },
+  {
+   "id": "g2b-field",
+   "start": 329.6,
+   "text": "BirunIQ Field brings captures from the mobile app back into the same system."
+  },
+  {
+   "id": "h1-close",
+   "start": 344.5,
+   "text": "Defence. Energy. Environment. Land. One system."
+  },
+  {
+   "id": "z1",
+   "start": 356.4,
+   "text": "Unlock the evidence."
+  },
+  {
+   "id": "z2",
+   "start": 358.6,
+   "text": "Unlock the answers."
+  },
+  {
+   "id": "z3",
+   "start": 360.8,
+   "text": "Unlock your world."
+  }
+ ]
+}

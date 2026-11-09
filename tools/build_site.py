@@ -460,7 +460,7 @@ def page_home():
 </div></section>
 
 <section class="sec" style="overflow:hidden"><div class="wrap story">
-  <div class="diagram rv"><img src="assets/media/earth-biruni.webp" alt="The Earth from above Central and South Asia" loading="lazy" width="1400" height="1400" /></div>
+  <div class="diagram rv"><img src="assets/media/earth-biruni.webp" alt="The Earth from above Central and South Asia" loading="lazy" width="1400" height="1400" />{construction()}</div>
   <div style="display:grid;gap:22px">
     <span class="eyebrow rv">The name</span>
     <h2 class="h2 split">Named for the man who measured the Earth from a mountain.</h2>
@@ -818,15 +818,7 @@ def page_story():
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
   <div class="story">
-    <div class="diagram rv" style="position:relative">
-      <img src="assets/media/earth-biruni.webp" alt="The Earth over Central and South Asia" loading="lazy" width="1400" height="1400" />
-      <svg viewBox="0 0 100 100" style="position:absolute;inset:0" aria-hidden="true">
-        <path d="M86 9 L33 23" stroke="#7FD6FF" stroke-width=".45" fill="none"/>
-        <path d="M86 9 L70 9" stroke="#E3B733" stroke-width=".3" stroke-dasharray="1 1" fill="none"/>
-        <circle cx="33" cy="23" r="1.2" fill="#E3B733"/>
-        <polygon points="86,6 86.8,8.2 89,9 86.8,9.8 86,12 85.2,9.8 83,9 85.2,8.2" fill="#E3B733"/>
-      </svg>
-    </div>
+    <div class="diagram rv"><img src="assets/media/earth-biruni.webp" alt="The Earth over Central and South Asia" loading="lazy" width="1400" height="1400" />{construction()}</div>
     <div class="prose" style="display:grid;gap:18px">
       <p class="lede rv">Abu Rayhan al-Biruni was an 11th-century scholar. From a summit of known height in present-day Pakistan, he sighted the horizon and measured the dip angle <span class="iq">θ</span> between the horizontal and his line of sight.</p>
       <p class="rv d1">That line is tangent to the Earth: it touches it at exactly one point. From one triangle he recovered the radius of the entire planet, a thousand years before satellites.</p>

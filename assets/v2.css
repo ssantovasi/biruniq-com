@@ -279,8 +279,10 @@ section{position:relative}
 .formula{font-family:"Cambria Math","Times New Roman",serif;font-size:clamp(1.6rem,3.6vw,2.8rem);color:var(--ivory);letter-spacing:.02em;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .formula i{color:var(--cyan);font-style:italic}
 .formula .th{color:var(--brass)}
-.diagram{position:relative;aspect-ratio:1}
-.diagram svg{width:100%;height:100%}
+.diagram{position:relative;aspect-ratio:1;width:100%;max-width:620px;justify-self:center;margin:6% 0 0}
+.diagram img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.diagram .construct{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:2}
+@media(max-width:900px){.diagram{max-width:440px;margin:18% auto 0}}
 
 /* split feature rows */
 .feat{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,5vw,80px);align-items:center;padding:clamp(40px,6vw,80px) 0;border-top:1px solid var(--line)}

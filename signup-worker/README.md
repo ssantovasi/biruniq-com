@@ -2,7 +2,7 @@
 
 This Worker receives the sign-up form on biruniq.com:
 - It stores each sign-up in Cloudflare D1 (`biruniq-signups`).
-- It emails a notification to `support@biruniq.com` through Resend, which forwards to Steven.
+- It emails a notification through Resend to `NOTIFY_TO`, a Worker secret holding Steven's inbox. support@biruniq.com's Cloudflare forward silently dropped Resend mail on 2026-11-08.
 - It emails the visitor a confirmation with the trailer link.
 - It returns the trailer's video id, so the site can show the player.
 
@@ -18,6 +18,7 @@ npx wrangler d1 execute biruniq-signups --remote --file schema.sql
 npx wrangler secret put RESEND_API_KEY              # sending-only key for the biruniq.com domain
 npx wrangler secret put IP_SALT                     # any long random string
 npx wrangler secret put VIDEO_ID                    # the trailer's YouTube id (kept out of this public repo)
+npx wrangler secret put NOTIFY_TO                   # the inbox that receives sign-up notifications
 npx wrangler deploy                                 # creates https://signup.biruniq.com
 ```
 

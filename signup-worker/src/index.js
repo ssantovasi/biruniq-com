@@ -40,12 +40,14 @@ async function sha256(s) {
 }
 
 async function send(env, to, subject, html, replyTo) {
-  if (!env.RESEND_API_KEY) return false;
+  if (!env.RESEND_API_KEY) { console.log("mail skipped: no RESEND_API_KEY"); return false; }
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
     body: JSON.stringify({ from: env.MAIL_FROM, to: [to], subject, html, ...(replyTo ? { reply_to: replyTo } : {}) }),
   });
+  // Logged for `wrangler tail`; the visitor's sign-up never fails on mail.
+  console.log(`resend ${r.status} for "${subject.slice(0, 40)}": ${(await r.text()).slice(0, 300)}`);
   return r.ok;
 }
 

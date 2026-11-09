@@ -7,7 +7,6 @@ workers_dev = false
 routes = [{ pattern = "signup.biruniq.com", custom_domain = true }]
 
 [vars]
-NOTIFY_TO = "support@biruniq.com"
 MAIL_FROM = "BirunIQ <no-reply@biruniq.com>"
 
 # Created with: npx wrangler d1 create biruniq-signups  (paste the database_id it prints)
@@ -19,4 +18,6 @@ database_id = "a0879967-45ad-4d56-8949-a41e725002b3"
 # Secrets (never in this file):
 #   npx wrangler secret put RESEND_API_KEY   (a sending-only Resend key for biruniq.com)
 #   npx wrangler secret put IP_SALT          (any long random string)
+#   npx wrangler secret put NOTIFY_TO        (where sign-up notifications go; a direct inbox, because the
+#                                             support@ Cloudflare forward dropped Resend mail on 2026-11-08)
 #   npx wrangler secret put VIDEO_ID         (the trailer's YouTube id; kept out of this public repo)

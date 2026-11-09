@@ -10,7 +10,7 @@ Stood up 2026-10-02 for toll-free SMS number verification; to be replaced later.
 - `sms-terms.html` — SMS terms: program, opt-in, frequency, rates, STOP/HELP
 - `about.html`, `eula.html`, `evaluation-terms.html`, `attributions.html` — added 2026-10-22 with a new
   `privacy.html` and `terms.html` (Terms of Service). ⚠ These six share their text word-for-word with the
-  Cartos site (`cartos-Project/website/`); change both together. Party: Bitruvius, Inc.; law: Delaware.
+  product site (`cartos-Project/website/`); change both together. Party: Bitruvius, Inc.; law: Delaware.
 
 Plain static HTML, system fonts, no external requests. Every `[TO FILL: …]` must be
 replaced with real business details before the toll-free verification is submitted.

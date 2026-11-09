@@ -1,0 +1,713 @@
+{
+ "atlas": {
+  "served": "GOVERNMENT",
+  "pain": "City and national government — A government is judged on four things at once — whether the city works, whether the coast is secure, whether the lights come on in a crisis, and whether anyone can prove it afterwards.",
+  "summary": "The city, the coast and the crisis on one screen. 5 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Smart City",
+    "Streetlights, waste, permits and service requests on one municipal map, each with its service level attached."
+   ],
+   [
+    "Situational Awareness 3D",
+    "The city as a navigable 3D scene — sightlines, shadow, elevation and floor-level detail for planning and response."
+   ],
+   [
+    "Emergency Services",
+    "Station coverage, response isochrones and live incident load across fire, police and ambulance together."
+   ],
+   [
+    "Maritime",
+    "Ports, channels, berths and coastal assets held as a managed operational layer rather than a chart."
+   ],
+   [
+    "Maritime Domain Awareness",
+    "Vessel traffic, anchorage behaviour and approach monitoring across the territorial sea."
+   ]
+  ],
+  "practice": "95 hospitals · 201 schools · 94 maritime features · 56 emergency assets",
+  "asks": "“Which schools and hospitals fall inside tonight’s flood extent, and who is nearest?”",
+  "resolves": "Joins the live layer catalogue to the modelled extent, ranks facilities by exposure, and resolves the nearest response asset that can reach each one.",
+  "guardrail": "The agent answers only inside the asking user’s licensed layers and grants — it inherits the interface’s checks, so there is no back door through the assistant."
+ },
+ "africa": {
+  "served": "CONTINENTAL GOVERNMENT",
+  "pain": "African Union states and continental agencies — Fifty-four states, the fastest urban growth on earth, and a base-map dependency that has historically been licensed from outside the continent.",
+  "summary": "Continental scale on open, free base-map data. 9 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Continental Command",
+    "The continent at one altitude — 54 states, live sources, a single operating picture."
+   ],
+   [
+    "Food & Agriculture",
+    "Cropland, markets, production and food-security signal by administrative unit."
+   ],
+   [
+    "Health & Immunization",
+    "Facility catchment, coverage and cold-chain reach measured against population."
+   ],
+   [
+    "Border Management",
+    "Crossings, corridors and control posts with movement and constraint."
+   ],
+   [
+    "Port Management",
+    "Port capacity, berth state and the hinterland connection behind it."
+   ],
+   [
+    "Land Use & Cover",
+    "Continental land-cover change, settlement growth and pressure on protected land."
+   ],
+   [
+    "Parcel Fabric",
+    "LADM-aligned tenure where cadastre exists, and the framework for where it does not yet."
+   ],
+   [
+    "Flood & Climate Risk",
+    "Exposure by settlement and asset, with live event monitoring on top of it."
+   ],
+   [
+    "Settlement Management",
+    "Formal and informal settlement growth against services and infrastructure gap."
+   ]
+  ],
+  "practice": "7,379 health facilities · 3,011 markets · 1,285 settlements · 54 AU states",
+  "asks": "“How many health facilities are in Kenya, and how much can we rely on that?”",
+  "resolves": "Counts by facility type across the selected country scope, charts the breakdown, and cites the register behind each class.",
+  "guardrail": "Every count carries an explicit provenance caveat naming the source and its currency — the answer tells you how much to trust it."
+ },
+ "terra": {
+  "served": "LAND ADMINISTRATION",
+  "pain": "Ministries of lands, national registries and cadastral agencies — most occupied land has no registered title, and a national survey is neither affordable nor fast enough to change that.",
+  "summary": "2 department modules. Parcel candidates are machine-delineated from imagery and promoted only by a human; BacksightIQ replays a recorded run — not yet a live tenure database.",
+  "modules": [
+   [
+    "BacksightIQ",
+    "Every parcel event append-only, each entry carrying an inclusion proof against a published root, with a rejection log the operator cannot quietly edit."
+   ],
+   [
+    "Parcel Fabric Development",
+    "LADM-aligned cadastral ingest from Esri Parcel Fabric or any ArcGIS FeatureServer — the same live pipeline deployed in One Africa, with candidate review."
+   ]
+  ],
+  "practice": "Candidate land units, each awaiting a reviewer · BacksightIQ as a recorded run",
+  "asks": "“Can this parcel’s history be proved to somebody who does not trust the registry?”",
+  "resolves": "Replays the parcel’s events against a published root, so a bank, a court or a citizen can verify the record independently — without the registry’s cooperation and without BirunIQ running.",
+  "guardrail": "An AI-segmented boundary is evidence, not title. The lowest rung of the tenure ladder carries no legal effect at all."
+ },
+ "sentry": {
+  "served": "REACTIVE CRISIS MONITORING",
+  "pain": "Crisis cells and national response agencies — In a crisis the failure that costs most is not the missed detection.",
+  "summary": "Confidence earned, never asserted. 3 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Crisis Command",
+    "The active picture during an event — what changed, where, and how confident we are."
+   ],
+   [
+    "Change Detection",
+    "Optical, SAR and thermal run as independent detectors; confidence is granted only where they agree."
+   ],
+   [
+    "Incidents",
+    "Scored incidents carrying their own evidence and thresholds, with a one-click report."
+   ]
+  ],
+  "practice": "Optical · SAR · thermal — confidence earned, not asserted",
+  "asks": "“Did anything change at our highest-priority assets overnight?”",
+  "resolves": "A background daemon searches the catalogues on a priority-driven interval and runs real optical, SAR and thermal detectors, opening a scored incident when it finds change.",
+  "guardrail": "Confidence is a band, never a fabricated percentage — and it is only raised where independent modalities agree. A degraded model cannot invent an incident."
+ },
+ "guardian": {
+  "served": "CRITICAL-INFRASTRUCTURE PROTECTION",
+  "pain": "National security and infrastructure ministries — Civil infrastructure is now a target set.",
+  "summary": "A score you can defend in a hearing. 5 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Command & Risk",
+    "The estate scored 0–100, decomposed into components an inquiry can interrogate."
+   ],
+   [
+    "Energy Infrastructure",
+    "Generation, transmission and fuel assets scored for exposure and consequence."
+   ],
+   [
+    "Utilities & Transport",
+    "Water, telecoms, rail and road assets carried in the same risk frame."
+   ],
+   [
+    "Emergency Services",
+    "The response capability that would have to answer, mapped against the assets at risk."
+   ],
+   [
+    "Defense & Military",
+    "Military and defence-adjacent sites held inside the same protective picture."
+   ]
+  ],
+  "practice": "50 scored sites, every score decomposed · demonstration weights, awaiting an assessing body",
+  "asks": "“Which sites carry the highest strike risk, and why those?”",
+  "resolves": "Scores 50 curated critical-infrastructure sites 0–100 and ranks them, with the live traffic and collateral picture on the same surface.",
+  "guardrail": "The score decomposes in front of you — criticality, exposure and category weight, each shown. The demonstration weights await an assessing body; the decomposition is the product."
+ },
+ "floodsurge": {
+  "served": "RIVERINE FLOOD",
+  "pain": "A US county’s emergency management office with its floodplain administrator — the response duty and the substantial-damage decision on one map. Demonstration watch area: Washington County, Vermont.",
+  "summary": "8 department modules, 6 of them built. Observed Extent has no code yet, and Field Survey has its Field capture forms but no web console. Data from NOAA/NWS, USGS and FEMA public sources.",
+  "modules": [
+   [
+    "FloodSurge Command",
+    "What needs attention now — gauges by the category the NWS states, forecast crossings, the latest rain, open events and unassessed facilities, led by what is missing."
+   ],
+   [
+    "River Watch",
+    "Observed and forecast stage at every gauge, coloured by that gauge’s own NWS flood categories, with a hydrograph for each."
+   ],
+   [
+    "Rain & Streamflow Outlook",
+    "MRMS observed rain and WPC forecast precipitation, each with its issue time read from the file. Streamflow on National Water Model reaches is not built."
+   ],
+   [
+    "Observed Extent",
+    "Where the water is now, from imagery. No code yet — blocked on two open data-licence items."
+   ],
+   [
+    "Forecast Inundation",
+    "The NWS five-day maximum forecast extent, marked as generated by a model, not observed. No depth by hour."
+   ],
+   [
+    "Exposure & Critical Facilities",
+    "Flood zones, structures and critical facilities against an extent — and a facility nobody has assessed reads as not assessed."
+   ],
+   [
+    "Events, Alerts & Reports",
+    "Events on the shared incident record; priority areas carry county-set threat levels, draw red at Alarm and send email and webhook notices. No SMS."
+   ],
+   [
+    "Field Survey & Substantial Damage",
+    "Field-app capture forms only. The web console and the substantial-damage worklist are not built."
+   ]
+  ],
+  "practice": "Six of eight surfaces built · observed extent not started · NOAA/NWS, USGS and FEMA public sources",
+  "asks": "“Which gauges are forecast to cross a flood category, and which critical facilities sit inside the forecast extent?”",
+  "resolves": "Reads each gauge’s NWS forecast against that gauge’s own flood categories, draws the NWS five-day maximum extent, and lists the facilities inside it — leading with the ones nobody has assessed.",
+  "guardrail": "Derived from NWS data, never an official warning. A forecast extent is marked generated, and a threat level is the county’s own rule, not a probability."
+ },
+ "spilltrace": {
+  "served": "OIL SPILL RESPONSE",
+  "pain": "Coastguards, environment ministries and port authorities — the party carrying the coastal duty, which is rarely the party carrying the operating duty.",
+  "summary": "9 department modules, all nine with a working console. Detection returns candidates, not confirmed slicks, and every live forecast is labelled simulated until an ocean-forcing feed is connected.",
+  "modules": [
+   [
+    "SpillTrace Command",
+    "The live incident, where it is predicted to go, and who is in its path — with the parts nobody has assessed shown as unassessed."
+   ],
+   [
+    "Detection",
+    "Phase A: dark-patch candidates from a self-hosted Sentinel-1 tiler, called candidates until look-alike screening lands."
+   ],
+   [
+    "Drift & Trajectory",
+    "An ensemble, not a line — and a run nobody computed has to say so rather than render an empty envelope."
+   ],
+   [
+    "Receptor Readiness",
+    "Desalination intakes, nurseries, landing sites and berths, led by the ones nobody can currently act for."
+   ],
+   [
+    "Escalation & Alerting",
+    "Keyed to how long there is to act rather than to severity, with a state that plainly means we cannot say."
+   ],
+   [
+    "Incident Record",
+    "What was true and when we knew it — corrections supersede rather than overwrite, enforced at the database."
+   ],
+   [
+    "Shoreline Survey (SCAT)",
+    "SCAT segments as surveyed, with the shore nobody has looked at held apart from the shore found clean."
+   ],
+   [
+    "Response Assets & Tasking",
+    "Booms, skimmers, vessels and crews against the protection gap. The ensemble optimiser is designed, not built."
+   ],
+   [
+    "Remediation & Waste",
+    "Cleanup as a capacity problem — recovered volume against somewhere lawful to put it — and the evidence pack that closes it."
+   ]
+  ],
+  "practice": "Nine consoles live · detection in phase A · forecasts labelled simulated",
+  "asks": "“Which receptors does this spill reach first, and which of them can nobody act for?”",
+  "resolves": "Runs the drift ensemble against the receptor registry and reports arrival by lead time — leading with the receptors that have no response arrangement behind them.",
+  "guardrail": "A receptor with no data is not a receptor that is safe, and an unwatched sea is not a clean sea. Readiness leads with what is missing."
+ },
+ "watchfloor": {
+  "served": "MILITARY INTELLIGENCE · GEOINT",
+  "pain": "Defence intelligence and national GEOINT agencies — An all-source watch runs on five consoles and one whiteboard.",
+  "summary": "One watch floor instead of five consoles. 10 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Watch Floor Command",
+    "The standing picture — what is being watched, what changed, and what the floor owes next."
+   ],
+   [
+    "Requirements & RFI",
+    "Requests for information triaged against what the organisation already holds, before anything is tasked."
+   ],
+   [
+    "Collection Management",
+    "What is asked of each sensor, when, and whether the request was actually satisfied."
+   ],
+   [
+    "Exploitation Workspace",
+    "Where an image becomes a judgement — at the claim level the imagery is entitled to support."
+   ],
+   [
+    "Order of Battle",
+    "Units, platforms and installations, every attribute resolving to the observation behind it and its age."
+   ],
+   [
+    "Maritime Picture",
+    "Surface and sub-surface contacts held on the same floor as everything else."
+   ],
+   [
+    "Air & Space Picture",
+    "Air movements and overhead passes, with what each pass could and could not see."
+   ],
+   [
+    "Ground Movement",
+    "Vehicle, unit and logistics movement adjudicated against the pattern it departs from."
+   ],
+   [
+    "All-Source Fusion",
+    "Imagery, SAR, ADS-B, AIS, field patrol and open reporting reconciled into one entity record."
+   ],
+   [
+    "Production & Dissemination",
+    "The report, its Admiralty ratings and its distribution — with an author on every response."
+   ]
+  ],
+  "practice": "Counted, never scored — 4 entities, 1 unconfirmed >30 d, 1 source silent 11 d",
+  "asks": "“What changed at this named area, and what is the claim entitled to say?”",
+  "resolves": "Adjudicates change across optical, SAR, thermal and RF, then drafts the report at the claim level the collection actually supports.",
+  "guardrail": "Entities are counted, never scored. No composite index is allowed to hide which of its inputs moved."
+ },
+ "maritimelens": {
+  "served": "MARITIME SECURITY · MDA",
+  "pain": "Navies, coastguards and fisheries enforcement — An exclusive economic zone is enormous, mostly empty, and the traffic that matters is the traffic actively trying not to be seen.",
+  "summary": "Where AIS stops and SAR starts. 9 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Patrol Command",
+    "Every contact in the patrol area, what is known about each — and, plainly, where the sensors cannot see."
+   ],
+   [
+    "Dark Vessels",
+    "Positive returns that fail to correlate with any AIS track, kept apart from the ones that could not be adjudicated."
+   ],
+   [
+    "Piracy & Armed Robbery",
+    "Incident history and current risk along the routes that carry it."
+   ],
+   [
+    "Trafficking",
+    "Narcotics, arms and human-trafficking indicators built from behaviour, not self-report."
+   ],
+   [
+    "IUU Fishing",
+    "Fishing effort inside and outside the zones that permit it."
+   ],
+   [
+    "Threat & Force Protection",
+    "Threat to own units and to the assets they are protecting."
+   ],
+   [
+    "Patrol Assets",
+    "Where the patrol assets are, what they can reach, and in what time."
+   ],
+   [
+    "Maritime Zones",
+    "Territorial sea, EEZ and protected zones as enforceable boundaries."
+   ],
+   [
+    "Incident Register",
+    "What happened, who adjudicated it, and what followed."
+   ]
+  ],
+  "practice": "Dark, correlated and un-adjudicated contacts counted apart — and an empty window says it is empty",
+  "asks": "“Which contacts in the zone are not who they claim to be?”",
+  "resolves": "Correlates radar and optical returns against AIS, then scores voyage behaviour, flag history and identity against the pattern each vessel departs from.",
+  "guardrail": "Contacts that could not be adjudicated are kept rigorously apart from dark ones — a sensor gap is not evidence of concealment."
+ },
+ "grid": {
+  "served": "ELECTRIC UTILITY",
+  "pain": "Transmission and distribution operators — A utility is nine departments wearing one logo.",
+  "summary": "Nine departments that normally buy nine tools. 9 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Grid Command",
+    "One executive picture of the network — load, outages, crews and capital work in a single view."
+   ],
+   [
+    "Network & Asset Ops",
+    "The connected asset record — substations, feeders, transformers and condition, read from the utility network."
+   ],
+   [
+    "CIP & Major Projects",
+    "The capital programme tracked spatially, with schedule from the scheduling system on the same map."
+   ],
+   [
+    "Storm Response",
+    "Pre-landfall staging, damage assessment and restoration progress reconciled against the outage management system."
+   ],
+   [
+    "Fleet & Field",
+    "Crew and vehicle positions against the work they are assigned, with field capture flowing straight back."
+   ],
+   [
+    "Vegetation",
+    "Encroachment risk along circuits, trim cycles, and the spans that actually drive reliability penalties."
+   ],
+   [
+    "Real Estate",
+    "Easements, right-of-way, land rights and tenancy attached to every structure on the network."
+   ],
+   [
+    "Environmental",
+    "Permits, protected habitat and compliance obligations bound to the assets that trigger them."
+   ],
+   [
+    "Stakeholder",
+    "Landowner, regulator and community engagement recorded against the project and the parcel."
+   ]
+  ],
+  "practice": "Now on the real OpenStreetMap transmission network in England (from 23 Sep); shown here on the US reference build",
+  "asks": "“Which substations lost redundancy this week, and what work is already against them?”",
+  "resolves": "Correlates asset, outage and work-order records read from the utility’s own systems of record against the network topology, then ranks by customers at risk.",
+  "guardrail": "The systems of record stay authoritative. The agent reports what the asset, outage and work-management systems say — it does not restate or overwrite them."
+ },
+ "flux": {
+  "served": "ENERGY STORAGE & POWER CONTROL",
+  "pain": "Storage owners, IPPs and power-electronics OEMs — Storage and power conversion are sold together, warranted separately, and operated by people who do not share a system.",
+  "summary": "Cell to converter to point of interconnection. 9 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Flux Command",
+    "The whole chain in one view — what is generated, stored and drawn, and whether balance holds to the next horizon."
+   ],
+   [
+    "Generation & Capture",
+    "Every generating asset by type and rating, against what it is actually delivering now."
+   ],
+   [
+    "Storage Fleet",
+    "State of charge, dwell and cycling across each site, against the conditions the warranty depends on."
+   ],
+   [
+    "Distribution Paths",
+    "Corridor loading against firm capacity, busiest first, with anything above limit flagged."
+   ],
+   [
+    "Demand Centres",
+    "Where the draw is, how firm it is, and which contracted peaks are about to be exceeded."
+   ],
+   [
+    "Balance & Forecast",
+    "Supply against demand, backward and forward, with the deficit named before it arrives."
+   ],
+   [
+    "Guarantee Ledger",
+    "What was promised, what was delivered, and what the shortfall is worth."
+   ],
+   [
+    "Operating Envelope",
+    "The warranty conditions, which excursions breached them, and which notice windows are still open."
+   ],
+   [
+    "Revenue vs Degradation",
+    "What a cycle earned, set against what it cost the asset."
+   ]
+  ],
+  "practice": "1.25 GW headroom · 249 MWh stored · 1 asset not reporting, and it says so",
+  "asks": "“Does balance hold through the next horizon, and what does it cost the asset?”",
+  "resolves": "Forecasts supply against demand across the chain and prices each cycle against warranty degradation and the guarantee ledger.",
+  "guardrail": "An asset that is not reporting is shown as not reporting. One silent unit is never averaged into a comfortable number."
+ },
+ "petrocore": {
+  "served": "OIL & GAS",
+  "pain": "Upstream, midstream and terminal operators — An operator carries three exposures on the same asset — integrity, emissions and security.",
+  "summary": "Integrity, emissions and security on one asset record. 9 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "PetroCore Command",
+    "Integrity, emissions and security on one asset record instead of three."
+   ],
+   [
+    "Petroleum Facilities",
+    "The estate that matters most, and what it is exposed to."
+   ],
+   [
+    "Pipeline Integrity",
+    "Right-of-way condition, encroachment, ground movement and third-party interference along the line."
+   ],
+   [
+    "Change Monitoring",
+    "What changed on or near the asset between epochs, with the detector named."
+   ],
+   [
+    "Marine & Tanker",
+    "Vessel movements against the terminal and the berths they are working."
+   ],
+   [
+    "Ignis · Process Safety",
+    "Protective state over plant geometry — detection, suppression, containment and escape, each bound to its basis."
+   ],
+   [
+    "Pre-Incident Plans",
+    "Per-location fire suppression plans on the ground they defend — tier, product, foam and cooling demand, tactical objectives, and the plan document itself."
+   ],
+   [
+    "Inspection Reports",
+    "Findings, severity and closure — including the measures still unverified."
+   ],
+   [
+    "Predictive Risk",
+    "Where integrity or safety is most likely to be lost next."
+   ]
+  ],
+  "practice": "Every analysis bound to the basis it was computed from — advisory, never a safety decision",
+  "asks": "“Where is integrity most likely to be lost along this line?”",
+  "resolves": "Fuses InSAR ground motion, right-of-way encroachment, third-party interference and inspection history into a ranked segment list.",
+  "guardrail": "Every analysis is bound to the basis it was computed from, and is advisory only — never a safety decision."
+ },
+ "tower": {
+  "served": "AIRPORT",
+  "pain": "Airport authorities and operators — An airport is two businesses on one piece of land: a movement area governed by safety regulation, and a property portfolio governed by revenue.",
+  "summary": "Airside and landside, one picture. 10 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Air Traffic",
+    "Movement areas, approach corridors and traffic load rendered over the live airfield."
+   ],
+   [
+    "Surface Condition",
+    "Pavement condition, contamination, friction and closures across runway, taxiway and apron."
+   ],
+   [
+    "Tarmac Lighting",
+    "Every fixture, circuit and outage on the airfield lighting system, with maintenance state."
+   ],
+   [
+    "Lane Striping",
+    "Markings inventory, wear and repaint scheduling across movement and non-movement areas."
+   ],
+   [
+    "Signage",
+    "Guidance and mandatory instruction signs with their compliance and legibility status."
+   ],
+   [
+    "Property Lease",
+    "Every leasehold, concession and parcel on airport land, with term, revenue and obligation."
+   ],
+   [
+    "Major Projects",
+    "Capital works on the airfield, phased against operational impact and closure windows."
+   ],
+   [
+    "Emergency Services",
+    "ARFF coverage, response routes and hot-spot readiness across the aerodrome."
+   ],
+   [
+    "Vehicle Traffic",
+    "Landside and airside vehicle movement, gate load and incursion risk."
+   ],
+   [
+    "Weather",
+    "Live conditions over the airfield, joined to surface condition and operational restriction."
+   ]
+  ],
+  "practice": "265 airfield features (reference build)",
+  "asks": "“Which movement areas are due for inspection before the next peak?”",
+  "resolves": "Scores airfield features by condition history, traffic loading and time since last inspection, and sequences the work into the available windows.",
+  "guardrail": "Airside safety decisions stay with the authority. The output is a prioritised list, never a clearance."
+ },
+ "milepost": {
+  "served": "TRANSPORTATION · DOT",
+  "pain": "State and national transport departments — A DOT is accountable at two altitudes at once: a commissioner answering for a multi-year capital programme, and a crew answering for today’s lane closure.",
+  "summary": "Executive overview first, then drill to the crew. 10 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Executive Overview",
+    "The whole programme at commissioner altitude — spend, schedule and condition by district."
+   ],
+   [
+    "Pavement Management",
+    "Condition index by segment, deterioration curves, and the treatment that is actually due."
+   ],
+   [
+    "Facility Management",
+    "Depots, salt sheds, rest areas and buildings managed as a single estate."
+   ],
+   [
+    "Lane Striping",
+    "Marking retroreflectivity, wear and the repaint programme by route."
+   ],
+   [
+    "Live Traffic",
+    "Current speed, volume and incident state across the whole network."
+   ],
+   [
+    "Roadwork & Obstructions",
+    "Every active closure, lane restriction and permit on the road at the same time."
+   ],
+   [
+    "Major Projects",
+    "Capital delivery tracked spatially, with schedule and stakeholder exposure attached."
+   ],
+   [
+    "Crew Status",
+    "Where the crews are, what they are assigned, and what they have completed today."
+   ],
+   [
+    "Snow Removal & Treatment",
+    "Route coverage, material usage and pass completion during a live event."
+   ],
+   [
+    "Emergency Response",
+    "Incident command over the roadway, with detour and closure control."
+   ]
+  ],
+  "practice": "1,537 transportation features (reference build)",
+  "asks": "“Which projects are slipping, and is it cost, schedule or scope?”",
+  "resolves": "Rolls project health up to portfolio level and decomposes every red flag into the specific metric that caused it.",
+  "guardrail": "No aggregate without its parts — each roll-up drills straight to the project record it was computed from."
+ },
+ "blueprint": {
+  "served": "INFRASTRUCTURE DELIVERY · AEC",
+  "pain": "Owners, programme managers and contractors — Capital delivery fails in the gap between design and ground.",
+  "summary": "Constructability before the ground is broken. 9 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Portfolio View",
+    "Every capital project on one map with status, spend and schedule health."
+   ],
+   [
+    "Design Status",
+    "Design maturity by package and discipline, tied to the site it belongs to."
+   ],
+   [
+    "Site Selection",
+    "Candidate sites compared against access, utilities, hazard and constraint before commitment."
+   ],
+   [
+    "Constructability Review",
+    "Buildability risk read in 3D before design freeze — clash, access, laydown and sequence."
+   ],
+   [
+    "Environmental & Cultural",
+    "Protected habitat, heritage and permit constraints bound to the project footprint."
+   ],
+   [
+    "Construction Inspections",
+    "Inspection records, defects and hold points captured in the field, located exactly."
+   ],
+   [
+    "Safety Report",
+    "Incidents, near-misses and hazards mapped to the work area that produced them."
+   ],
+   [
+    "Stakeholder Mgmt & Access",
+    "Landowner, neighbour and authority engagement against the parcel and the programme."
+   ],
+   [
+    "Live Traffic",
+    "Haul routes and public impact modelled against the active work zone."
+   ]
+  ],
+  "practice": "363 site features with 3D construction (reference build)",
+  "asks": "“Which sites changed since the last inspection, and does that match reported progress?”",
+  "resolves": "Compares imagery epochs against the reported construction schedule and surfaces the divergence, site by site.",
+  "guardrail": "Progress remains the inspector’s judgement. The AI supplies the discrepancy, not the verdict."
+ },
+ "harvest": {
+  "served": "AGRICULTURE INTELLIGENCE",
+  "pain": "Ministries of agriculture and food security — A ministry has to state national production before the harvest is in, and defend the number afterwards.",
+  "summary": "Seven surfaces, resolved live. 7 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Harvest Command",
+    "The national crop picture for a ministry — area, condition and outlook in one view."
+   ],
+   [
+    "Crop Type & Land Use",
+    "What is planted where, resolved from Sentinel-2 rather than taken on declaration."
+   ],
+   [
+    "Crop Health",
+    "Vigour and stress by field, through the season rather than at the end of it."
+   ],
+   [
+    "Yield Forecast",
+    "Expected production against area and condition, updated as the season runs."
+   ],
+   [
+    "Water & Drought",
+    "Moisture deficit, irrigation demand and drought exposure by district."
+   ],
+   [
+    "Field Boundaries & Registry",
+    "The field fabric itself — boundaries, holders and registry linkage."
+   ],
+   [
+    "Risk & Finance",
+    "Insurance, credit and subsidy exposure attached to the field it was written against."
+   ]
+  ],
+  "practice": "Seven surfaces resolved live from Sentinel-2 · Kenya & Nigeria",
+  "asks": "“What will this season yield, and where is the risk concentrated?”",
+  "resolves": "Resolves crop type, canopy health, water stress and a season-NDVI yield proxy live from Sentinel-2, by region, crop and season.",
+  "guardrail": "Forecasts ship with an honest inter-annual uncertainty band — never a single confident number a ministry will later be held to."
+ },
+ "greenscope": {
+  "served": "ENVIRONMENTAL",
+  "pain": "Environmental regulators and ESG-accountable operators — Environmental regulation is an evidence problem.",
+  "summary": "The regulator’s side of the table. 8 department modules, each owned and accountable on its own.",
+  "modules": [
+   [
+    "Environmental Command",
+    "The portfolio compliance picture — and the records the numbers cannot see, stated on the board."
+   ],
+   [
+    "Inspection Reports",
+    "Findings by severity and topic, with corrective actions, overdue tracking and recurrence."
+   ],
+   [
+    "Permitting",
+    "Conditions, expiries and obligations bound to the asset that triggers them."
+   ],
+   [
+    "Biodiversity & Habitat",
+    "Protected habitat and species constraints on the same map as the work."
+   ],
+   [
+    "Habitat Change",
+    "What the habitat did between epochs — adjudicated, not asserted."
+   ],
+   [
+    "Groundwater",
+    "Aquifer condition, abstraction and contamination pathways below the site."
+   ],
+   [
+    "Soil Intelligence",
+    "Soil condition and contamination, sampled and interpolated with its uncertainty carried."
+   ],
+   [
+    "Predictive Risk",
+    "Where the next finding is most likely, from the pattern of the ones already closed."
+   ]
+  ],
+  "practice": "Every board states its own denominator — what was counted, what was excluded, and why",
+  "asks": "“Where is the next compliance finding most likely to land?”",
+  "resolves": "Learns from closed findings to rank sites by the likelihood, topic and severity of the next issue, against permit conditions and habitat constraints.",
+  "guardrail": "The board states its own denominator — records that are not approved are excluded, counted, and shown beside the number they did not enter."
+ }
+}

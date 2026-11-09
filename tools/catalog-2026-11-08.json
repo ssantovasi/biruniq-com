@@ -1,0 +1,624 @@
+{
+ "atlas": {
+  "label": "Atlas · Government",
+  "blurb": "The general-government geospatial edition — Smart City, Situational Awareness, Emergency Services, Maritime, Field.",
+  "modules": [
+   {
+    "id": "smart-city",
+    "label": "Smart City"
+   },
+   {
+    "id": "situational-awareness",
+    "label": "Situational Awareness"
+   },
+   {
+    "id": "emergency-services",
+    "label": "Emergency Services"
+   },
+   {
+    "id": "maritime",
+    "label": "Maritime"
+   },
+   {
+    "id": "maritime-domain-awareness",
+    "label": "Maritime Domain Awareness"
+   }
+  ]
+ },
+ "grid": {
+  "label": "Grid · Electric Utility",
+  "blurb": "The electric-utility edition — 9 department cockpits (command, network, capital, storm, fleet, vegetation, real estate, environmental, stakeholder).",
+  "modules": [
+   {
+    "id": "grid-command",
+    "label": "Grid Command"
+   },
+   {
+    "id": "grid-operations",
+    "label": "Network & Asset Operations"
+   },
+   {
+    "id": "grid-capital",
+    "label": "CIP & Major Projects"
+   },
+   {
+    "id": "grid-storm",
+    "label": "Storm Response"
+   },
+   {
+    "id": "grid-fleet",
+    "label": "Fleet & Field"
+   },
+   {
+    "id": "grid-vegetation",
+    "label": "Vegetation Management"
+   },
+   {
+    "id": "grid-realestate",
+    "label": "Real Estate Management"
+   },
+   {
+    "id": "grid-environmental",
+    "label": "Environmental Management"
+   },
+   {
+    "id": "grid-stakeholder",
+    "label": "Stakeholder Management"
+   }
+  ]
+ },
+ "tower": {
+  "label": "Tower · Airport",
+  "blurb": "The airport-operations edition — lighting, surface, striping, signage, lease, projects, emergency, vehicle, air traffic, weather.",
+  "modules": [
+   {
+    "id": "air-lighting",
+    "label": "Tarmac Lighting"
+   },
+   {
+    "id": "air-surface",
+    "label": "Surface Condition"
+   },
+   {
+    "id": "air-striping",
+    "label": "Lane Striping"
+   },
+   {
+    "id": "air-signage",
+    "label": "Signage"
+   },
+   {
+    "id": "air-lease",
+    "label": "Property Lease"
+   },
+   {
+    "id": "air-projects",
+    "label": "Major Projects"
+   },
+   {
+    "id": "air-emergency",
+    "label": "Emergency Services"
+   },
+   {
+    "id": "air-vehicle",
+    "label": "Vehicle Traffic"
+   },
+   {
+    "id": "air-airtraffic",
+    "label": "Air Traffic"
+   },
+   {
+    "id": "air-weather",
+    "label": "Weather"
+   }
+  ]
+ },
+ "milepost": {
+  "label": "Milepost · DOT",
+  "blurb": "The state-DOT edition — executive overview + pavement, facility, striping, traffic, roadwork, projects, crew, snow, emergency.",
+  "modules": [
+   {
+    "id": "dot-executive",
+    "label": "Executive Overview"
+   },
+   {
+    "id": "dot-pavement",
+    "label": "Pavement Management"
+   },
+   {
+    "id": "dot-facility",
+    "label": "Facility Management"
+   },
+   {
+    "id": "dot-striping",
+    "label": "Lane Striping"
+   },
+   {
+    "id": "dot-traffic",
+    "label": "Live Traffic"
+   },
+   {
+    "id": "dot-roadwork",
+    "label": "Current Roadwork & Obstructions"
+   },
+   {
+    "id": "dot-projects",
+    "label": "Major Projects"
+   },
+   {
+    "id": "dot-crew",
+    "label": "Crew Status"
+   },
+   {
+    "id": "dot-snow",
+    "label": "Snow Removal & Treatment"
+   },
+   {
+    "id": "dot-emergency",
+    "label": "Emergency Response"
+   }
+  ]
+ },
+ "blueprint": {
+  "label": "Blueprint · AEC",
+  "blurb": "The architecture/engineering/construction edition — portfolio + design, site, constructability, environmental, inspection, safety, stakeholder, traffic.",
+  "modules": [
+   {
+    "id": "aec-portfolio",
+    "label": "Portfolio View"
+   },
+   {
+    "id": "aec-design",
+    "label": "Design Status"
+   },
+   {
+    "id": "aec-site",
+    "label": "Site Selection"
+   },
+   {
+    "id": "aec-constructability",
+    "label": "Constructability Review"
+   },
+   {
+    "id": "aec-environmental",
+    "label": "Environmental & Cultural"
+   },
+   {
+    "id": "aec-inspection",
+    "label": "Construction Inspections"
+   },
+   {
+    "id": "aec-safety",
+    "label": "Safety Report"
+   },
+   {
+    "id": "aec-stakeholder",
+    "label": "Stakeholder Management & Access"
+   },
+   {
+    "id": "aec-traffic",
+    "label": "Live Traffic"
+   }
+  ]
+ },
+ "africa": {
+  "label": "Africa · One Africa",
+  "blurb": "The continental-government edition for African governments, national mapping agencies, and ministries — Continental Command + food, health, border, port, land, flood, settlement.",
+  "modules": [
+   {
+    "id": "africa-command",
+    "label": "Continental Command"
+   },
+   {
+    "id": "africa-food",
+    "label": "Food Sustainability & Agriculture"
+   },
+   {
+    "id": "africa-health",
+    "label": "Health & Immunization"
+   },
+   {
+    "id": "africa-border",
+    "label": "Border Management"
+   },
+   {
+    "id": "africa-port",
+    "label": "Port Management"
+   },
+   {
+    "id": "africa-land",
+    "label": "Land Use & Land Cover"
+   },
+   {
+    "id": "africa-flood",
+    "label": "Flood & Climate Risk"
+   },
+   {
+    "id": "africa-settlement",
+    "label": "Settlement Management"
+   }
+  ]
+ },
+ "guardian": {
+  "label": "Guardian · Critical-Infra Protection",
+  "blurb": "The proactive critical-infrastructure protection edition — strike-risk scoring across command, energy, utilities, emergency, defense.",
+  "modules": [
+   {
+    "id": "guard-command",
+    "label": "Command & Risk"
+   },
+   {
+    "id": "guard-energy",
+    "label": "Energy Infrastructure"
+   },
+   {
+    "id": "guard-utilities",
+    "label": "Utilities & Transport"
+   },
+   {
+    "id": "guard-emergency",
+    "label": "Emergency Services"
+   },
+   {
+    "id": "guard-defense",
+    "label": "Defense & Military"
+   }
+  ]
+ },
+ "sentry": {
+  "label": "Sentry · Crisis Monitoring",
+  "blurb": "The reactive crisis-monitoring edition — optical/SAR/thermal change detection, autonomous incidents, commercial tasking.",
+  "modules": [
+   {
+    "id": "sentry-command",
+    "label": "Crisis Command"
+   },
+   {
+    "id": "sentry-detect",
+    "label": "Change Detection"
+   },
+   {
+    "id": "sentry-incidents",
+    "label": "Incidents"
+   }
+  ]
+ },
+ "harvest": {
+  "label": "Harvest · Agriculture Intelligence",
+  "blurb": "The agriculture-intelligence edition (HarvestAI) — STAC-native crop type, crop health, yield forecast, water/drought, field boundaries, and agri-risk across Africa/UAE/GCC.",
+  "modules": [
+   {
+    "id": "agriculture",
+    "label": "Agriculture"
+   },
+   {
+    "id": "harv-command",
+    "label": "Harvest Command"
+   },
+   {
+    "id": "harv-croptype",
+    "label": "Crop Type & Land Use"
+   },
+   {
+    "id": "harv-health",
+    "label": "Crop Health"
+   },
+   {
+    "id": "harv-yield",
+    "label": "Yield Forecast"
+   },
+   {
+    "id": "harv-water",
+    "label": "Water & Drought"
+   },
+   {
+    "id": "harv-boundaries",
+    "label": "Field Boundaries & Registry"
+   },
+   {
+    "id": "harv-risk",
+    "label": "Risk & Finance"
+   }
+  ]
+ },
+ "greenscope": {
+  "label": "GreenScope · Environmental",
+  "blurb": "The environmental-intelligence edition — EIS/EIR regulatory compliance, permitting, biodiversity, habitat change, groundwater, soil and predictive risk.",
+  "modules": [
+   {
+    "id": "green-command",
+    "label": "Environmental Command"
+   },
+   {
+    "id": "green-eir",
+    "label": "Inspection Reports"
+   },
+   {
+    "id": "green-permitting",
+    "label": "Permitting"
+   },
+   {
+    "id": "green-biodiversity",
+    "label": "Biodiversity & Habitat"
+   },
+   {
+    "id": "green-habitat",
+    "label": "Habitat Change"
+   },
+   {
+    "id": "green-groundwater",
+    "label": "Groundwater"
+   },
+   {
+    "id": "green-soil",
+    "label": "Soil Intelligence"
+   },
+   {
+    "id": "green-risk",
+    "label": "Predictive Risk"
+   }
+  ]
+ },
+ "petrocore": {
+  "label": "PetroCore · Oil & Gas",
+  "blurb": "The oil & gas edition — critical-infrastructure risk, pipeline integrity, daily change monitoring, marine and tanker surveillance, and Ignis process safety.",
+  "modules": [
+   {
+    "id": "petro-command",
+    "label": "PetroCore Command"
+   },
+   {
+    "id": "petro-pipeline",
+    "label": "Pipeline Integrity"
+   },
+   {
+    "id": "petro-monitor",
+    "label": "Change Monitoring"
+   },
+   {
+    "id": "petro-marine",
+    "label": "Marine & Tanker"
+   },
+   {
+    "id": "petro-ignis",
+    "label": "Ignis · Process Safety"
+   },
+   {
+    "id": "petro-pip",
+    "label": "Pre-Incident Plans"
+   },
+   {
+    "id": "petro-eir",
+    "label": "Inspection Reports"
+   },
+   {
+    "id": "petro-risk",
+    "label": "Predictive Risk"
+   }
+  ]
+ },
+ "flux": {
+  "label": "Flux · Renewable Energy",
+  "blurb": "The renewable-energy edition, asset-owner view — generation, storage, distribution and demand as one balance question, with the contractual guarantee layer beneath it.",
+  "modules": [
+   {
+    "id": "flux-command",
+    "label": "Flux Command"
+   },
+   {
+    "id": "flux-generation",
+    "label": "Generation & Capture"
+   },
+   {
+    "id": "flux-storage",
+    "label": "Storage Fleet"
+   },
+   {
+    "id": "flux-distribution",
+    "label": "Distribution Paths"
+   },
+   {
+    "id": "flux-demand",
+    "label": "Demand Centres"
+   },
+   {
+    "id": "flux-balance",
+    "label": "Balance & Forecast"
+   },
+   {
+    "id": "flux-guarantee",
+    "label": "Guarantee Ledger"
+   },
+   {
+    "id": "flux-envelope",
+    "label": "Operating Envelope"
+   },
+   {
+    "id": "flux-revenue",
+    "label": "Revenue vs Degradation"
+   }
+  ]
+ },
+ "terra": {
+  "label": "Terra · Land Administration",
+  "blurb": "The land-administration edition — tenure as a tamper-evident record. The parcel fabric proposes a boundary; BacksightIQ records that it was proposed, claimed and registered, and every entry carries an inclusion proof against a published root.",
+  "modules": [
+   {
+    "id": "backsight",
+    "label": "BacksightIQ"
+   },
+   {
+    "id": "africa-parcel",
+    "label": "Parcel Fabric Development"
+   }
+  ]
+ },
+ "maritimelens": {
+  "label": "MaritimeLens · Naval Patrol",
+  "blurb": "The naval-patrol edition — piracy, trafficking, illegal fishing and force protection, built on positive sensor detections correlated against AIS rather than on the absence of a signal.",
+  "modules": [
+   {
+    "id": "lens-command",
+    "label": "Patrol Command"
+   },
+   {
+    "id": "lens-dark",
+    "label": "Dark Vessel Detection"
+   },
+   {
+    "id": "lens-piracy",
+    "label": "Piracy & Armed Robbery"
+   },
+   {
+    "id": "lens-trafficking",
+    "label": "Trafficking"
+   },
+   {
+    "id": "lens-fishing",
+    "label": "IUU Fishing"
+   },
+   {
+    "id": "lens-threat",
+    "label": "Threat & Force Protection"
+   },
+   {
+    "id": "lens-patrol",
+    "label": "Patrol Assets & Tasking"
+   },
+   {
+    "id": "lens-zones",
+    "label": "Maritime Zones"
+   },
+   {
+    "id": "lens-incidents",
+    "label": "Incident Register"
+   }
+  ]
+ },
+ "watchfloor": {
+  "label": "WatchFloor · NATO Decision Intelligence",
+  "blurb": "The all-source military decision-intelligence edition — a living order of battle, a JISR-compliant collection loop, and standards-native coalition exchange. Every assertion carries its source, its confidence and what would falsify it.",
+  "modules": [
+   {
+    "id": "wf-command",
+    "label": "Watch Floor Command"
+   },
+   {
+    "id": "wf-requirements",
+    "label": "Requirements & RFI"
+   },
+   {
+    "id": "wf-collection",
+    "label": "Collection Management"
+   },
+   {
+    "id": "wf-exploitation",
+    "label": "Exploitation Workspace"
+   },
+   {
+    "id": "wf-orbat",
+    "label": "Order of Battle"
+   },
+   {
+    "id": "wf-maritime",
+    "label": "Maritime Picture"
+   },
+   {
+    "id": "wf-air",
+    "label": "Air & Space Picture"
+   },
+   {
+    "id": "wf-ground",
+    "label": "Ground Movement"
+   },
+   {
+    "id": "wf-fusion",
+    "label": "All-Source Fusion"
+   },
+   {
+    "id": "wf-production",
+    "label": "Production & Dissemination"
+   }
+  ]
+ },
+ "spilltrace": {
+  "label": "SpillTrace · Oil Spill Response",
+  "blurb": "The oil-spill edition, bought by the party carrying the coastal duty rather than the operating duty — detection, trajectory, receptor readiness, shoreline survey and response. The receptor registry, the incident record and the drift kernel are engine-level and shared with PetroCore, not forked.",
+  "modules": [
+   {
+    "id": "spill-command",
+    "label": "SpillTrace Command"
+   },
+   {
+    "id": "spill-detection",
+    "label": "Detection"
+   },
+   {
+    "id": "spill-drift",
+    "label": "Drift & Trajectory"
+   },
+   {
+    "id": "spill-receptors",
+    "label": "Receptor Readiness"
+   },
+   {
+    "id": "spill-escalation",
+    "label": "Escalation & Alerting"
+   },
+   {
+    "id": "spill-incidents",
+    "label": "Incident Record"
+   },
+   {
+    "id": "spill-shoreline",
+    "label": "Shoreline Survey (SCAT)"
+   },
+   {
+    "id": "spill-response",
+    "label": "Response Assets & Tasking"
+   },
+   {
+    "id": "spill-remediation",
+    "label": "Remediation & Waste"
+   }
+  ]
+ },
+ "floodsurge": {
+  "label": "FloodSurge · Riverine Flood",
+  "blurb": "The riverine flood edition, bought by a US county's emergency management office with its floodplain administrator — river watch, rain and streamflow outlook, observed and forecast extent, exposure of critical facilities, events, and the field survey behind a substantial-damage worklist. Coastal storm surge is not in it yet.",
+  "modules": [
+   {
+    "id": "flood-command",
+    "label": "FloodSurge Command"
+   },
+   {
+    "id": "flood-rivers",
+    "label": "River Watch"
+   },
+   {
+    "id": "flood-forecast",
+    "label": "Rain & Streamflow Outlook"
+   },
+   {
+    "id": "flood-extent",
+    "label": "Observed Extent"
+   },
+   {
+    "id": "flood-inundation",
+    "label": "Forecast Inundation"
+   },
+   {
+    "id": "flood-exposure",
+    "label": "Exposure & Critical Facilities"
+   },
+   {
+    "id": "flood-events",
+    "label": "Events, Alerts & Reports"
+   },
+   {
+    "id": "flood-survey",
+    "label": "Field Survey & Substantial Damage"
+   }
+  ]
+ }
+}

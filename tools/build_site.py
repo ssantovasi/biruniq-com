@@ -671,7 +671,7 @@ def page_platform():
   <div class="feat rev" style="margin-top:30px">
     <div class="fx"><div class="frame rv">{vid("admin", label="Admin console")}</div></div>
     <div class="rv"><span class="eyebrow">Three admin tiers, in-app</span><h3 class="h2" style="margin:16px 0">No separate console.</h3>
-      <ul class="mods" style="grid-template-columns:1fr"><li><span>01</span>Provider admin: which modules are enabled across the deployment</li><li><span>02</span>Tech admin: module defaults and the shared feature pool</li><li><span>03</span>User admin: users, roles and teams</li><li><span>04</span>Data sources, each external feed with its status, and one switch for external data</li></ul></div>
+      <ul class="mods" style="grid-template-columns:1fr"><li><span>01</span>Provider admin: which modules are enabled across the deployment</li><li><span>02</span>Tech admin: module defaults and the shared feature pool</li><li><span>03</span>User admin: users, roles and teams, inside the tenant's own boundary and no other</li><li><span>04</span>Data sources, each external feed with its status, and one switch for external data</li><li><span>05</span>A new tenant's first administrator set up from the command line, with a one-time link and no password</li></ul></div>
   </div>
 </div></section>
 
@@ -729,8 +729,8 @@ def page_platform():
   <div class="sec-head"><span class="eyebrow rv">Export · layout · services</span><h2 class="h2 split">What leaves the building.</h2>
   <p class="lede rv d2">An operating picture that cannot produce the artefact an agency files is a demonstration, not a system.</p></div>
   <div class="grid g3">
-    <div class="card rv"><span class="k">Export & layout</span><ul><li>Professional layout composer</li><li>Multi-page mapbook from the live scene</li><li>Print-ready map export</li><li>One-click DOCX incident reports</li><li>GeoJSON export of sketches and markup</li></ul></div>
-    <div class="card rv d1"><span class="k">Local data & GIS services</span><ul><li>ArcGIS Feature and Map Server, query and upsert</li><li>COG · XYZ raster · GeoJSON URL · PostGIS</li><li>NASA GIBS and STAC as persistable overlays</li><li>Local GeoTIFF and CSV upload</li></ul></div>
+    <div class="card rv"><span class="k">Export & layout</span><ul><li>Professional layout composer</li><li>Multi-page mapbook from the live scene</li><li>Print-ready map export</li><li>Incident and event reports in HTML and DOCX, from one report model on one stylesheet</li><li>GeoJSON export of sketches and markup</li></ul></div>
+    <div class="card rv d1"><span class="k">Local data & GIS services</span><ul><li>ArcGIS Feature and Map Server, query and upsert</li><li>Your own ArcGIS Online or ArcGIS Enterprise account, each person signed in as themselves</li><li>ArcGIS layers linked into a module map, read with each viewer's own permissions</li><li>Attribute editing and publishing to ArcGIS (in controlled release)</li><li>COG · XYZ raster · GeoJSON URL · PostGIS</li><li>NASA GIBS and STAC as persistable overlays</li><li>Local GeoTIFF and CSV upload</li><li>LAS/LAZ point clouds committed as team-scoped layers, with lineage</li></ul></div>
     <div class="card rv d2"><span class="k">The surfaces</span><ul><li>Floating, snapshot-able panels</li><li>KPI dashboards and the module catalogue</li><li>Point clouds and Gaussian splats</li><li>UTM/MGRS grid and coordinate readout</li></ul></div>
   </div>
 </div></section>
@@ -799,6 +799,8 @@ def page_sovereignty():
       <div class="card rv d1"><span class="k">Access</span><h3 class="h3">Scoped by team</h3><p>Inside a tenant, access follows the team, not the whole organisation.</p></div>
       <div class="card rv d2"><span class="k">Identity</span><h3 class="h3">One sign-in, two factors</h3><p>One identity across every edition and the field app, with a second factor at sign-in.</p></div>
       <div class="card rv d3"><span class="k">Licences</span><h3 class="h3">Clean supply chain</h3><p>Every model, dataset and dependency carries a licence class, and each model a provenance manifest.</p></div>
+      <div class="card rv d3"><span class="k">Keys</span><h3 class="h3">Rotatable encryption</h3><p>Stored credentials and connector tokens are encrypted at rest, and the key can be rotated without losing them: the old key only decrypts while every row moves to the new one.</p></div>
+      <div class="card rv"><span class="k">Personal data</span><h3 class="h3">Marked, and cleared on sign-out</h3><p>Every column that holds personal data carries a mark the database can be asked for. Signing out clears what the browser held of the person's name and work.</p></div>
     </div>
   </div>
 </div></section>

@@ -111,7 +111,7 @@
    ],
    [
     "Incidents",
-    "Scored incidents carrying their own evidence and thresholds, with a one-click report."
+    "Scored incidents carrying their own evidence and thresholds, with a one-click report in HTML or DOCX. Watched sites can be imported from a file: a dry run names every bad row, then the file goes in all or nothing."
    ]
   ],
   "practice": "Optical · SAR · thermal — confidence earned, not asserted",
@@ -153,7 +153,7 @@
  "floodsurge": {
   "served": "RIVERINE FLOOD",
   "pain": "A US county’s emergency management office with its floodplain administrator — the response duty and the substantial-damage decision on one map. Demonstration watch area: Washington County, Vermont.",
-  "summary": "8 department modules, 6 of them built. Observed Extent has no code yet, and Field Survey has its Field capture forms but no web console. Data from NOAA/NWS, USGS and FEMA public sources.",
+  "summary": "8 department modules, 7 of them built. Observed Extent has no code yet, and Field Survey is built in part: Field capture forms and a worklist, but no survey map layers yet. Data from NOAA/NWS, USGS and FEMA public sources.",
   "modules": [
    [
     "FloodSurge Command",
@@ -165,7 +165,7 @@
    ],
    [
     "Rain & Streamflow Outlook",
-    "MRMS observed rain and WPC forecast precipitation, each with its issue time read from the file. Streamflow on National Water Model reaches is not built."
+    "MRMS observed rain and WPC forecast precipitation, each with its issue time read from the file, and National Water Model short-range streamflow on river reaches, marked as modelled."
    ],
    [
     "Observed Extent",
@@ -185,10 +185,10 @@
    ],
    [
     "Field Survey & Substantial Damage",
-    "Field-app capture forms only. The web console and the substantial-damage worklist are not built."
+    "Field-app capture forms, and a worklist of high-water marks, damage inspections and the determinations people record. The determination is recorded, never computed. The survey map layers are not built yet."
    ]
   ],
-  "practice": "Six of eight surfaces built · observed extent not started · NOAA/NWS, USGS and FEMA public sources",
+  "practice": "Seven of eight surfaces built · observed extent not started · NOAA/NWS, USGS and FEMA public sources",
   "asks": "“Which gauges are forecast to cross a flood category, and which critical facilities sit inside the forecast extent?”",
   "resolves": "Reads each gauge’s NWS forecast against that gauge’s own flood categories, draws the NWS five-day maximum extent, and lists the facilities inside it — leading with the ones nobody has assessed.",
   "guardrail": "Derived from NWS data, never an official warning. A forecast extent is marked generated, and a threat level is the county’s own rule, not a probability."
@@ -220,11 +220,11 @@
    ],
    [
     "Incident Record",
-    "What was true and when we knew it — corrections supersede rather than overwrite, enforced at the database."
+    "What was true and when we knew it — incidents and observations entered on screen, and corrections that supersede rather than overwrite, enforced at the database."
    ],
    [
     "Shoreline Survey (SCAT)",
-    "SCAT segments as surveyed, with the shore nobody has looked at held apart from the shore found clean."
+    "SCAT segments as surveyed, with the shore nobody has looked at held apart from the shore found clean. Segments are registered one at a time or from a file, checked in a dry run first."
    ],
    [
     "Response Assets & Tasking",
@@ -232,7 +232,7 @@
    ],
    [
     "Remediation & Waste",
-    "Cleanup as a capacity problem — recovered volume against somewhere lawful to put it — and the evidence pack that closes it."
+    "Cleanup as a capacity problem: a waste-movement ledger, recorded and corrected on screen, with its correction chain. The rest of the remediation design is not built yet."
    ]
   ],
   "practice": "Nine consoles live · detection in phase A · forecasts labelled simulated",

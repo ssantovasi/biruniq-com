@@ -14,6 +14,8 @@
  * - strict field lengths;
  * - CORS limited to the site's origins.
  */
+import { handleAdmin } from "./admin.js";
+
 const ORIGINS = ["https://biruniq.com", "https://www.biruniq.com"];
 const MAX = { name: 120, email: 200, organisation: 160, role: 120, country: 80, message: 2000, interest: 40 };
 
@@ -55,6 +57,8 @@ export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     const origin = req.headers.get("Origin") || "";
+    const admin = await handleAdmin(req, env, url);
+    if (admin) return admin;
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors(origin) });
     if (url.pathname !== "/api/signup" || req.method !== "POST") return json({ ok: false, error: "not found" }, 404, origin);
 

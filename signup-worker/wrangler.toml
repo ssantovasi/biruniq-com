@@ -21,3 +21,8 @@ database_id = "a0879967-45ad-4d56-8949-a41e725002b3"
 #   npx wrangler secret put NOTIFY_TO        (where sign-up notifications go; a direct inbox, because the
 #                                             support@ Cloudflare forward dropped Resend mail on 2026-11-08)
 #   npx wrangler secret put VIDEO_ID         (the trailer's YouTube id; kept out of this public repo)
+#   Sign-up admin (src/admin.js; fails closed until set):
+#   npx wrangler secret put ACCESS_TEAM      (the Cloudflare Zero Trust team name, e.g. "biruniq" for biruniq.cloudflareaccess.com)
+#   npx wrangler secret put ACCESS_AUD       (the Application Audience (AUD) tag of the Access app on signup.biruniq.com/admin)
+#   npx wrangler secret put ADMIN_EMAILS     (comma-separated emails allowed to see sign-ups)
+#   npx wrangler secret put ADMIN_API_KEY    (32+ random characters; BirunIQ's API reads /api/admin/summary with it)

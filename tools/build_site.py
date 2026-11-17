@@ -235,21 +235,21 @@ def trailer_box(depth=0):
   </div>"""
 
 
-def signup_section(depth=0, title="Sign up to watch the trailer.", lede=None):
+def signup_section(depth=0, title="Sign up to watch the trailer.", lede=None, perks=None, button="Unlock the trailer →", sid="signup"):
     up = "../" * depth
     lede = lede or ("Tell us who you are and we'll unlock the six-minute trailer right here, email you the link, "
                     "and keep you informed as BirunIQ moves toward general availability.")
     picks = "".join(f'<label><input type="checkbox" name="interests" value="{e["name"]}" /><span>{e["name"]}</span></label>' for e in ED)
-    return f"""<section class="sec" id="signup"><div class="wrap signup-wrap">
+    perks = perks or [("The trailer, unlocked", "Six minutes inside the running platform, across all seventeen editions."),
+                      ("The link, by email", "So you can share it with your team."),
+                      ("A briefing, if you want one", "On demonstration data, for the editions your agency runs.")]
+    perks_html = "".join(f'<div class="rv{" d" + str(i) if i else ""}"><i>0{i + 1}</i><span><b>{E(b)}</b>{E(t)}</span></div>' for i, (b, t) in enumerate(perks))
+    return f"""<section class="sec" id="{sid}"><div class="wrap signup-wrap">
   <div>
     <span class="eyebrow rv">Sign up</span>
     <h2 class="h2 split" style="margin-top:18px">{title}</h2>
     <p class="lede rv d2" style="margin-top:18px">{lede}</p>
-    <div class="perks">
-      <div class="rv"><i>01</i><span><b>The trailer, unlocked</b>Six minutes inside the running platform, across all seventeen editions.</span></div>
-      <div class="rv d1"><i>02</i><span><b>The link, by email</b>So you can share it with your team.</span></div>
-      <div class="rv d2"><i>03</i><span><b>A briefing, if you want one</b>On demonstration data, for the editions your agency runs.</span></div>
-    </div>
+    <div class="perks">{perks_html}</div>
     <p class="rv d3" style="margin-top:22px"><a class="yt-link" data-yt-link hidden href="#">Open the trailer on YouTube →</a></p>
   </div>
   <form class="signup rv d1" novalidate>
@@ -266,7 +266,7 @@ def signup_section(depth=0, title="Sign up to watch the trailer.", lede=None):
     <label>Anything you'd like us to know? (optional)<textarea name="message" rows="3" maxlength="2000"></textarea></label>
     <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
     <label class="check"><input type="checkbox" name="consent" required /><span class="consent-text">I agree that Bitruvius, Inc. (BirunIQ) may store these details and email me about BirunIQ, including the trailer link. I can ask to stop at any time. See the <a href="{up}privacy.html">Privacy Policy</a>.</span></label>
-    <button class="btn primary" type="submit" style="justify-self:start">Unlock the trailer →</button>
+    <button class="btn primary" type="submit" style="justify-self:start">{button}</button>
     <p class="status" role="status" aria-live="polite"></p>
   </form>
 </div></section>"""
@@ -812,6 +812,7 @@ def page_sovereignty():
 """ + footer(earth_credit=True)
 
 
+ARCGIS_FILM = "VGVL_nK72ho"  # YouTube, unlisted; replace when a new cut is uploaded
 ARCGIS_STATUS = [
     ("Read your content, your organisation's and ArcGIS Living Atlas, as yourself, through BirunIQ's proxy. Nothing is copied.", "ok", "Available today"),
     ("Edit attributes on hosted feature layers", "cr", "Controlled release"),
@@ -859,12 +860,26 @@ def page_arcgis():
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
   <div class="feat" style="align-items:start">
+    <div class="rv"><span class="eyebrow">The film</span><h2 class="h2" style="margin:16px 0">Seven minutes, narrated.</h2><p class="lede">The same mock-up, walked through chapter by chapter: sign-in, Living Atlas, files and services, styling and popups, point clouds and splats, editing and publishing, and what is coming next.</p><p class="rv d1" style="margin-top:18px"><a class="btn sm" href="#updates">Sign up for updates</a></p></div>
+    <div class="trailer film-open rv d1" data-yt="{ARCGIS_FILM}">
+      <img src="assets/media/arcgis-film-poster.webp" alt="BirunIQ Atlas with an ArcGIS hydrant layer and its popup, from the film" loading="lazy" width="1280" height="720" />
+      <button aria-label="Play the BirunIQ for ArcGIS film">
+        <span class="pbtn" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+        <span class="meta"><b>BirunIQ for ArcGIS users</b><span>Narrated walkthrough · mock-up</span></span>
+      </button>
+    </div>
+  </div>
+  <p class="privacy-note">The film plays in YouTube's privacy-enhanced player, and nothing loads from YouTube until you press play.</p>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="feat" style="align-items:start">
     <div class="rv"><span class="eyebrow">Read and write</span><h2 class="h2" style="margin:16px 0">What your ArcGIS sign-in can do.</h2><p class="lede">Writing back to a customer's ArcGIS is switched on per organisation, and only after it has been proven with Esri.</p></div>
     <div class="ag-table rv d1"><table><thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead><tbody>{rows}</tbody></table></div>
   </div>
   <div class="grid g2" style="margin-top:56px">{cards}</div>
   <p class="footnote" style="margin-top:32px">Controlled release means built and switched on per organisation. Coming soon means not available yet. ArcGIS, ArcGIS Online, ArcGIS Enterprise and ArcGIS Living Atlas are trademarks of Esri. No Esri partnership, certification or endorsement exists or is implied.</p>
 </div></section>
+{signup_section(title="Sign up for updates.", lede="Hear when ArcGIS editing and publishing open up, when 3D account and scene layers arrive, and when the ScorpioOne engine comes to BirunIQ.", perks=[("ArcGIS updates", "Controlled-release and coming-soon items as they move forward."), ("The trailer, by email", "Six minutes inside the running platform, across all seventeen editions."), ("A briefing, if you want one", "With your own organisation's ArcGIS content.")], button="Sign up for updates →", sid="updates")}
 <section class="cta-band"><div class="ring" aria-hidden="true"></div><div class="wrap" style="display:grid;justify-items:center;gap:24px">
   <h2 class="h2 split" style="text-align:center">Bring your ArcGIS to the briefing.</h2>
   <p class="lede rv" style="text-align:center">We'll show it working with your own organisation's content.</p>

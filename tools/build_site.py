@@ -140,7 +140,7 @@ assert len(ED) == N_INDUSTRIES
 # ── chrome ────────────────────────────────────────────────────────────────
 DECK = json.loads((TOOLS / "deck-editions.json").read_text(encoding="utf-8"))
 NAV = [("platform.html", "Platform"), ("editions.html", "Editions"), ("sovereignty.html", "Sovereignty"),
-       ("trailer.html", "Trailer"), ("story.html", "The name")]
+       ("arcgis.html", "ArcGIS"), ("trailer.html", "Trailer"), ("story.html", "The name")]
 
 
 def head(title, desc, depth=0, og_img="assets/media/trailer-poster.webp"):
@@ -195,7 +195,7 @@ def footer(depth=0, earth_credit=False):
       <p class="tg">Unlock your world.™</p>
       <p style="margin-top:18px"><a class="btn sm" href="{up}trailer.html#signup">Sign up for updates</a></p>
     </div>
-    <div><h4>Platform</h4><nav><a href="{up}platform.html">One platform</a><a href="{up}sovereignty.html">Sovereignty</a><a href="{up}editions.html">All editions</a><a href="{up}trailer.html">Trailer</a><a href="{up}story.html">The name</a><a href="{up}contact.html">Contact</a></nav></div>
+    <div><h4>Platform</h4><nav><a href="{up}platform.html">One platform</a><a href="{up}sovereignty.html">Sovereignty</a><a href="{up}arcgis.html">ArcGIS</a><a href="{up}editions.html">All editions</a><a href="{up}trailer.html">Trailer</a><a href="{up}story.html">The name</a><a href="{up}contact.html">Contact</a></nav></div>
     <div><h4>Editions</h4><nav>{eds}</nav></div>
     <div><h4>&nbsp;</h4><nav>{eds2}</nav></div>
   </div>
@@ -812,6 +812,67 @@ def page_sovereignty():
 """ + footer(earth_credit=True)
 
 
+ARCGIS_STATUS = [
+    ("Read your content, your organisation's and ArcGIS Living Atlas, as yourself, through BirunIQ's proxy. Nothing is copied.", "ok", "Available today"),
+    ("Edit attributes on hosted feature layers", "cr", "Controlled release"),
+    ("Add features, delete features, change geometry", "soon", "Coming soon"),
+    ("Publish an uploaded BirunIQ dataset to your organisation as a new hosted feature layer, licence-checked, with its lineage", "cr", "Controlled release"),
+    ("Publish analysis results as a new hosted service", "soon", "Coming soon"),
+]
+ARCGIS_CARDS = [
+    ("Available today", "Sign in as yourself", "Each person connects their own ArcGIS Online or ArcGIS Enterprise account as a Named User. Esri's permissions decide what they see, and no Esri token ever reaches the browser."),
+    ("Available today", "Living Atlas, files and services", "Living Atlas layers through GeoWizard; file geodatabases, shapefiles, KML and KMZ; Esri REST feature, map and image services, WMS, WMTS and WFS. Credits are kept."),
+    ("Available today", "Style, filter and popups", "Icon markers, clustering, colour by attribute, line and polygon styles, attribute filters and full feature popups on ArcGIS layers. The ArcGIS layer itself is unchanged."),
+    ("Available today", "Point clouds, splats and 3D buildings", "LAS and LAZ point clouds, 3D Tiles and Gaussian splats beside your ArcGIS layers, and 3D buildings with each building's own popup."),
+    ("Coming soon", "3D globe and scene layers", "Your account layers on the 3D globe, and your organisation's scene layers, including point cloud scene layers."),
+    ("Coming soon", "Bitruvius ScorpioOne Spatial Engine", "One engine under everything BirunIQ moves, inside your deployment: Cloud Optimized GeoTIFF, the Turbo codecs, and I3S and 3D Tiles writers that are ahead of schedule and nearing readiness."),
+]
+
+
+def page_arcgis():
+    rows = "".join(f'<tr><td>{E(t)}</td><td><span class="ag-pill {k}">{E(s)}</span></td></tr>' for t, k, s in ARCGIS_STATUS)
+    cards = "".join(
+        f'<div class="card rv{" d" + str(i % 4) if i % 4 else ""}"><span class="k">{E(k)}</span><h3 class="h3">{E(h)}</h3><p>{E(p)}</p></div>'
+        for i, (k, h, p) in enumerate(ARCGIS_CARDS))
+    return head("BirunIQ for ArcGIS · BirunIQ", "BirunIQ for ArcGIS users: sign in with your own ArcGIS account and work with your content, your organisation's and Living Atlas inside BirunIQ. An interactive mock-up with an example organisation.") + header("arcgis.html") + f"""
+<style>
+.ag-stage{{position:relative;width:100%;aspect-ratio:16/9;max-width:100%;border-radius:14px;overflow:hidden;border:1px solid rgba(242,239,230,.16);background:#04080F}}
+.ag-stage iframe{{position:absolute;inset:0;width:100%;height:100%;border:0}}
+.ag-actions{{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;align-items:center}}
+.feat>*{{min-width:0}}
+.ag-table{{max-width:100%;overflow-x:auto;border:1px solid rgba(242,239,230,.16);border-radius:14px}}
+.ag-table table{{width:100%;border-collapse:collapse;font-size:.95rem}}
+.ag-table th,.ag-table td{{text-align:left;padding:14px 18px;border-bottom:1px solid rgba(242,239,230,.1);vertical-align:top}}
+.ag-table tr:last-child td{{border-bottom:0}}
+.ag-table th{{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}}
+.ag-pill{{display:inline-block;white-space:nowrap;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid currentColor}}
+.ag-pill.ok{{color:#7ACB9A}} .ag-pill.cr{{color:#E8A56E}} .ag-pill.soon{{color:#E3B733}}
+</style>
+<section class="phero" style="padding-bottom:32px"><div class="wrap">
+  <span class="eyebrow rv">Esri integration</span>
+  <h1 class="display split">Your ArcGIS, inside BirunIQ.</h1>
+  <p class="lede rv d2">Sign in with your own ArcGIS Online or ArcGIS Enterprise account and work with the content Esri already lets you see: yours, your organisation's and ArcGIS Living Atlas, beside every BirunIQ module. Esri's permissions decide. BirunIQ never widens them.</p>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="ag-stage rv"><iframe src="arcgis/experience.html#full" title="BirunIQ for ArcGIS users, interactive mock-up" loading="lazy" allow="fullscreen"></iframe></div>
+  <div class="ag-actions"><a class="btn primary" href="arcgis/experience.html">Open full screen</a><span class="footnote" style="margin:0">An interactive mock-up of the BirunIQ Atlas screen with an example organisation: demo utility data on real public map data of Montpelier, Vermont. The Red Rocks splat and the 3D buildings are recordings from BirunIQ's own renderer.</span></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="feat" style="align-items:start">
+    <div class="rv"><span class="eyebrow">Read and write</span><h2 class="h2" style="margin:16px 0">What your ArcGIS sign-in can do.</h2><p class="lede">Writing back to a customer's ArcGIS is switched on per organisation, and only after it has been proven with Esri.</p></div>
+    <div class="ag-table rv d1"><table><thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead><tbody>{rows}</tbody></table></div>
+  </div>
+  <div class="grid g2" style="margin-top:56px">{cards}</div>
+  <p class="footnote" style="margin-top:32px">Controlled release means built and switched on per organisation. Coming soon means not available yet. ArcGIS, ArcGIS Online, ArcGIS Enterprise and ArcGIS Living Atlas are trademarks of Esri. No Esri partnership, certification or endorsement exists or is implied.</p>
+</div></section>
+<section class="cta-band"><div class="ring" aria-hidden="true"></div><div class="wrap" style="display:grid;justify-items:center;gap:24px">
+  <h2 class="h2 split" style="text-align:center">Bring your ArcGIS to the briefing.</h2>
+  <p class="lede rv" style="text-align:center">We'll show it working with your own organisation's content.</p>
+  <a class="btn primary rv" href="contact.html">Request a briefing</a>
+</div></section>
+""" + footer()
+
+
 def page_story():
     return head("The name · BirunIQ", "BirunIQ is named for Abu Rayhan al-Biruni, the 11th-century scholar who measured the Earth from a single mountain. The mark is his construction.") + header("story.html") + f"""
 <section class="phero"><div class="wrap">
@@ -883,6 +944,7 @@ def main():
     pages = {
         "index.html": page_home(), "editions.html": page_editions(), "trailer.html": page_trailer(),
         "platform.html": page_platform(), "sovereignty.html": page_sovereignty(), "story.html": page_story(),
+        "arcgis.html": page_arcgis(),
     }
     (ROOT / "editions").mkdir(exist_ok=True)
     for e in ED:

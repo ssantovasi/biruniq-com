@@ -1,9 +1,12 @@
 /* Sign-up admin for biruniq.com (2026-11-17).
  *
- * GET  /admin                    the sign-ups page (HTML, same origin)
- * GET  /api/admin/signups        newest first, up to 500, with which are new since this viewer last looked
- * POST /api/admin/seen           marks everything up to now as seen for this viewer
- * GET  /api/admin/summary        { total, new, last_at } for BirunIQ's Admin (server to server)
+ * GET  /admin                      the sign-ups page (HTML, same origin)
+ * GET  /admin/api/signups          (the page) newest first, up to 500, with which are new since this viewer last looked
+ * POST /admin/api/seen             (the page) marks everything up to now as seen for this viewer
+ * GET  /api/admin/summary          { total, new, last_at } for BirunIQ's Admin (server to server, ADMIN_API_KEY)
+ * GET  /api/admin/signups, POST /api/admin/seen   the same, for BirunIQ's Admin
+ * The Cloudflare Access application covers signup.biruniq.com/admin* only, so /api/admin/* is reachable by the
+ * key holder, and /admin* needs both Access and the in-Worker check.
  *
  * Who may call (fails closed: with neither configured, every call is refused):
  *   1. A person through Cloudflare Access: the request carries Cf-Access-Jwt-Assertion, verified here
@@ -86,14 +89,16 @@ async function seenAt(env, who) {
 }
 
 export async function handleAdmin(req, env, url) {
-  const p = url.pathname;
-  if (!(p === "/admin" || p.startsWith("/api/admin/"))) return null;
+  // /admin/api/* is what the page calls (inside the Access application on /admin*);
+  // /api/admin/* is for BirunIQ's API with the key (outside Access). Same handlers.
+  const p = url.pathname.replace(/^\/admin\/api\//, "/api/admin/");
+  if (!(url.pathname === "/admin" || url.pathname.startsWith("/admin/api/") || url.pathname.startsWith("/api/admin/"))) return null;
   const who = await adminViewer(req, env);
   if (!who) {
     const configured = (env.ACCESS_TEAM && env.ACCESS_AUD && env.ADMIN_EMAILS) || env.ADMIN_API_KEY;
     return jsonOut({ ok: false, error: configured ? "not allowed" : "sign-up admin is not configured" }, configured ? 403 : 503);
   }
-  if (p === "/admin" && req.method === "GET" && who.startsWith("person:")) {
+  if (url.pathname === "/admin" && req.method === "GET" && who.startsWith("person:")) {
     return new Response(PAGE, { headers: { "Content-Type": "text/html; charset=utf-8", "Content-Security-Policy": "default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; frame-ancestors 'none'", ...noStore } });
   }
   const seen = await seenAt(env, who);
@@ -140,10 +145,10 @@ const e=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt
 let data=[],q="";
 function draw(){const ql=q.toLowerCase();const rows=data.filter(r=>!ql||(r.name+" "+r.email+" "+r.organisation).toLowerCase().includes(ql));
 document.getElementById("rows").innerHTML=rows.map(r=>'<tr class="'+(r.is_new?"new":"")+'"><td>'+e(r.created_at.replace("T"," ").slice(0,16))+(r.is_new?'<span class="tag">NEW</span>':"")+'</td><td>'+e(r.name)+'</td><td>'+e(r.organisation)+(r.role?'<div class="mut">'+e(r.role)+'</div>':"")+'</td><td>'+e(r.email)+'</td><td>'+e(r.country)+'</td><td class="mut">'+e((r.interests||[]).join(", "))+'</td><td class="msg">'+e(r.message)+'</td><td class="mut">'+e((r.page||"").replace(/^https?:\\/\\/(www\\.)?biruniq\\.com/,""))+'</td></tr>').join("")||'<tr><td colspan="8" class="mut">No sign-ups match.</td></tr>';}
-async function load(){const r=await fetch("/api/admin/signups",{credentials:"same-origin"});const j=await r.json();if(!j.ok){document.getElementById("sub").textContent="Not allowed: "+(j.error||r.status);return;}
+async function load(){const r=await fetch("/admin/api/signups",{credentials:"same-origin"});const j=await r.json();if(!j.ok){document.getElementById("sub").textContent="Not allowed: "+(j.error||r.status);return;}
 data=j.signups;const n=data.filter(x=>x.is_new).length;document.getElementById("total").textContent=data.length+" sign-ups";document.getElementById("fresh").textContent=n+" new since your last visit";
 document.getElementById("sub").textContent="Signed in as "+j.viewer+(j.seen_at?" · last marked seen "+j.seen_at.replace("T"," ").slice(0,16)+" UTC":"");draw();}
 document.getElementById("q").addEventListener("input",ev=>{q=ev.target.value;draw();});
-document.getElementById("seen").addEventListener("click",async()=>{await fetch("/api/admin/seen",{method:"POST",credentials:"same-origin"});load();});
+document.getElementById("seen").addEventListener("click",async()=>{await fetch("/admin/api/seen",{method:"POST",credentials:"same-origin"});load();});
 load();
 </script></body></html>`;

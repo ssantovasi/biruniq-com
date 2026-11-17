@@ -50,6 +50,12 @@
 
   const saved = get(); if (saved) unlock(saved);
 
+  // Open films (no sign-up): the id is in the page; nothing loads until play.
+  $$(".trailer.film-open").forEach((box) => {
+    const b = $("button", box);
+    if (b) b.addEventListener("click", () => player(box, box.dataset.yt, 0));
+  });
+
   // The form
   $$("form.signup").forEach((form) => {
     const status = $(".status", form);
@@ -72,7 +78,8 @@
         if (!r.ok || !j.ok) throw new Error(j.error || "Sign-up failed");
         put(j.video); unlock(j.video);
         form.classList.add("done");
-        say("Thank you. The trailer is unlocked above, and we've emailed you the link.", true);
+        say($(".trailer.gated") ? "Thank you. The trailer is unlocked above, and we've emailed you the link."
+          : "Thank you. You're signed up for updates, and we've emailed you the trailer link.", true);
         const box = $(".trailer.gated");
         if (box) { box.scrollIntoView({ behavior: "smooth", block: "center" }); }
       } catch (err) {
